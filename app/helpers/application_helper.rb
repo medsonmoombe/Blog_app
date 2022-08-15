@@ -1,2 +1,2 @@
-module ApplicationHelper # rubocop:todo Style/Documentation
+module ApplicationHelper
 end
