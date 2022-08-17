@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # like model class
 class Like < ApplicationRecord
   belongs_to :author, class_name: 'User'
