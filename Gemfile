@@ -72,3 +72,7 @@ group :test do
 end
 
 gem 'hirb'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
