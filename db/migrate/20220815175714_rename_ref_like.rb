@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # rename user_id to author_id
 class RenameRefLike < ActiveRecord::Migration[7.0]
   def change
