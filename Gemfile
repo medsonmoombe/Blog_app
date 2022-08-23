@@ -75,4 +75,6 @@ gem 'hirb'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rails-controller-testing'
 end
