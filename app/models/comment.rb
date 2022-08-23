@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-# comment class
+ue# comment class
 class Comment < ApplicationRecord
   belongs_to :author, class_name: 'User'
   belongs_to :post, class_name: 'Post'

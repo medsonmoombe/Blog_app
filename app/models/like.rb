@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-# like model class
+e# like model class
 class Like < ApplicationRecord
   belongs_to :author, class_name: 'User'
   belongs_to :post, class_name: 'Post'

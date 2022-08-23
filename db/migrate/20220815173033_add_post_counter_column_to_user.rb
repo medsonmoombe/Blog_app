@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # adds post counter column to users
 class AddPostCounterColumnToUser < ActiveRecord::Migration[7.0]
   def change
