@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # creates posts
 class CreatePosts < ActiveRecord::Migration[7.0]
   def change
