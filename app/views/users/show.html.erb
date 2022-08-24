@@ -6,4 +6,6 @@
 <% @recent_posts.each do |post| %>
   <%= render partial: 'partials/post', locals: { post: post} %>
 <% end %>
-<%= link_to("see all posts", user_posts_path(@user), class: "see-all-post-btn") %>
+<div class="div-see-all">
+  <%= link_to("see all posts", user_posts_path(@user), class: "see-all-post-btn") %>
+</div>

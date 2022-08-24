@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   validates :comments_counter, :likes_counter,
             numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
-  after_save :updates_post_counter, :recent_comments
+  after_save :updates_post_counter
 
   def updates_post_counter
     author.increment!(:posts_counter)
