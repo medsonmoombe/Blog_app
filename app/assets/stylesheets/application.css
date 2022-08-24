@@ -1,55 +1,56 @@
 .posts {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    height: auto;
-    padding: 12px;
-    margin-top: 10px;
-    border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  padding: 12px;
+  margin-top: 10px;
+  border: 2px solid #000;
 }
 
-.post-title, a {
-    color: #000;
-    text-decoration: none !important;
-    text-transform: capitalize;
+.post-title,
+a {
+  color: #000;
+  text-decoration: none !important;
+  text-transform: capitalize;
 }
 
 .post-infor {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
 }
 
 .comments-ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: auto;
-    height: auto;
-    padding: 12px;
-    margin-top: 10px;
-    border: 2px solid #000;
-    list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  padding: 12px;
+  margin-top: 10px;
+  border: 2px solid #000;
+  list-style: none;
 }
 
 .post {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    height: auto;
-    padding: 12px;
-    margin-top: 10px;
-    border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  padding: 12px;
+  margin-top: 10px;
+  border: 2px solid #000;
 }
 
 .post-owner {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .owner-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
 }
