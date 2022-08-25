@@ -6,14 +6,17 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @like = Like.new
   end
 
   def new
     @post = Post.new
+    @params = params
   end
 
   def create
-    @posts = Post.new(posts_params)
+    @post = Post.new(posts_params)
     if @post.save
       redirect_to user_post_path(id: @post.id, user_id: @post.author_id), notice: 'Post created succesfully!'
     else
