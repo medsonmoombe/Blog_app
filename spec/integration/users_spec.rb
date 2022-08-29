@@ -14,10 +14,6 @@ describe 'the signin process', type: :feature do
     Post.create(author: @first_user, title: 'software developer', text: 'This is a post about software development')
     Post.create(author: @second_user, title: 'Rails', text: 'This a post' * 20)
     Post.create(author: @second_user, title: 'Javascript', text: 'This is my post about javascript' * 20)
-
-    Comment.create(post_id: 1, author_id: 1, text: 'Hi Tom!, nice article')
-    Comment.create(post_id: 2, author_id: 2, text: 'lily you are the best!')
-    Comment.create(post_id: 1, author_id: 1, text: 'Thanks daniel, nice article!')
   end
 
   context 'user index page' do
@@ -76,7 +72,7 @@ end
 
 it 'should display users bio' do
   visit user_path(@first_user.id)
-  expect(page).to have_content('Teacher from Mexico.') 
+  expect(page).to have_content('Teacher from Mexico.')
 end
 
 it 'should display the user/s first 3 posts.' do
@@ -101,5 +97,30 @@ it 'When I click to see all posts, it redirects me to the user/s post/s index pa
   visit user_path(@first_user)
   click_link 'see all posts'
   expect(current_path).to eq(user_posts_path(@first_user.id))
+end
+
+
+context 'User post show page' do
+  it 'Should display post text' do
+    visit user_posts_path(@first_user.id)
+    expect(page).to have_content('This is my first post')
+  end
+
+  it 'Should display comments counter' do
+    visit user_post_path(@first_user.id, @first_user.posts.first.id)
+    expect(page).to have_content('Comments: 0')
+  end
+
+  it 'Should display first comment' do
+    @first_user.comments.create(post_id: @first_user.posts.first.id, text: 'Comment1')
+    visit user_posts_path(@first_user.id)
+    expect(page).to have_content('Comments: 1')
+  end
+
+  it 'Should redirect to post s page' do
+    visit user_posts_path(@first_user.id)
+    click_link 'Hello'
+    expect(current_path).to eq(user_post_path(@first_user.id, @first_user.posts.first.id))
+  end
 end
 end
