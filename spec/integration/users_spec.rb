@@ -1,7 +1,6 @@
 require 'rails_helper'
 # User index page:
 
-# I can see the profile picture for each user.
 # When I click on a user, I am redirected to that user's show page.
 
 describe 'the signin process', type: :feature do
@@ -42,5 +41,11 @@ describe 'the signin process', type: :feature do
     expect(profile_pic[0][:src]).not_to be('')
     expect(profile_pic.length).to eq(users.length)
    end
+  end
+
+  it 'When  clicks on a user, it should redirected to that user show page' do
+    visit root_path
+    click_link 'Tom'
+    expect(current_path).to eq(user_path(User.first))
   end
 end
