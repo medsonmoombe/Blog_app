@@ -48,4 +48,50 @@ describe 'the signin process', type: :feature do
     click_link 'Tom'
     expect(current_path).to eq(user_path(User.first))
   end
+
+# user show page:
+# I can see a button that lets me view all of a user's posts.
+# When I click a user's post, it redirects me to that post's show page.
+# When I click to see all posts, it redirects me to the user's post's index page.
+
+context "User show page" do
+  before(:each) do
+    visit user_path(@first_user.id)
+  end
+  it 'should show the user profile picture' do
+    visit user_path(@first_user.id)
+    users = User.all.order(:id)
+    profile_pic = page.all('img')
+    expect(profile_pic[0][:src]).not_to be('')
+    expect(profile_pic.length).to eq(users.length-1)
+  end
+
+  it 'should display user/s username ' do
+    visit user_path(@first_user.id)
+    expect(page).to have_content('Tom')
+  end
+end
+
+it 'should display the number of posts the user has written' do
+  visit user_path(@first_user.id)
+  expect(page).to have_content('Number of posts: 2')
+end
+
+it 'should display users bio' do
+  visit user_path(@first_user.id)
+  expect(page).to have_content('Teacher from Mexico.') 
+end
+
+it 'should display the user/s first 3 posts.' do
+  visit user_path(@first_user)
+  expect(page).to have_content('Hello')
+  expect(page).to have_content('software developer')
+  expect(page).to have_content('Hello')
+end
+
+it 'should display button that lets me view all of a user/s posts' do
+  visit user_path(@first_user)
+  expect(page).to have_content('see all post')
+end
+
 end
