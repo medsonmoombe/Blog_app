@@ -50,9 +50,6 @@ describe 'the signin process', type: :feature do
   end
 
 # user show page:
-# I can see a button that lets me view all of a user's posts.
-# When I click a user's post, it redirects me to that post's show page.
-# When I click to see all posts, it redirects me to the user's post's index page.
 
 context "User show page" do
   before(:each) do
@@ -94,4 +91,15 @@ it 'should display button that lets me view all of a user/s posts' do
   expect(page).to have_content('see all post')
 end
 
+it 'When  click a user/s post, it should redirects  to that post/s show page' do
+  visit user_path(@first_user)
+  click_link 'Hello'
+  expect(current_path).to eq(user_post_path(@first_user.id, @first_user.posts.first.id))
+end
+
+it 'When I click to see all posts, it redirects me to the user/s post/s index page' do
+  visit user_path(@first_user)
+  click_link 'see all posts'
+  expect(current_path).to eq(user_posts_path(@first_user.id))
+end
 end
