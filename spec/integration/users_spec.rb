@@ -46,7 +46,7 @@ describe 'the signin process', type: :feature do
 
   # user show page:
 
-  context "User show page" do
+  context 'User show page' do
     before(:each) do
       visit user_path(@first_user.id)
     end
