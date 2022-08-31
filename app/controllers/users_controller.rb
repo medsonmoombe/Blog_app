@@ -6,5 +6,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @recent_posts = @user.recent_posts
+
+    if params[:id] = "sign_out"
+      sign_out current_user
+      return
+    end
   end
 end
