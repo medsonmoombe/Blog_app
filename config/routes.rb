@@ -10,4 +10,8 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create]
     resources :likes, only: %i[create]
   end
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end
