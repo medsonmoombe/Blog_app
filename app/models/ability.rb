@@ -8,8 +8,8 @@ class Ability
     user ||= User.new
     if user.is? :admin
     else
-      can %I[destroy], Comment, author_id: user.id
-      can %I[create destroy], Post, author_id: user.id
+      can %i[destroy], Comment, author_id: user.id
+      can %i[create destroy], Post, author_id: user.id
       can :create, Comment, :all
       can :read, :all
     end

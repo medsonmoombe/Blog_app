@@ -28,7 +28,7 @@
     <li><%= comment.author.name %>: <%= comment.text %>
     <br>
     <% if can? :destroy, comment %>
-      <%= button_to "Delete comment", comment_path(id: comment.id), method: :delete, data: {
+      <%= button_to "Delete", post_comment_path(comment_id: comment.id, post_id: @post.id), method: :delete, data: {
         turbo: false,
       } %>
     <% end %>
