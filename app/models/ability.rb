@@ -4,7 +4,9 @@ class Ability
   def initialize(user)
     # Define abilities for the user here. For example:
     user ||= User.new
+
     if user.is? :admin
+      can :manage, :all
     else
       can %i[destroy], Comment, author_id: user.id
       can %i[create destroy], Post, author_id: user.id
