@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users,
-  controllers: {
-      sessions: 'users/sessions',
-      registrations: 'users/registrations'
-  }
+             controllers: {
+               sessions: 'users/sessions',
+               registrations: 'users/registrations'
+             }
   resources :users, only: %I[index show] do
     resources :posts, only: %I[index show new create destroy]
   end
@@ -25,4 +25,3 @@ Rails.application.routes.draw do
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
-
