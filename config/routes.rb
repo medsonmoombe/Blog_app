@@ -4,8 +4,6 @@ Rails.application.routes.draw do
       sessions: 'users/sessions',
       registrations: 'users/registrations'
   }
-get '/member-data', to: 'members#show'
-
   resources :users, only: %I[index show] do
     resources :posts, only: %I[index show new create destroy]
   end
@@ -27,3 +25,4 @@ get '/member-data', to: 'members#show'
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
+

@@ -15,3 +15,4 @@
 # Comment.create(post_id: 1, author_id: 1, text: 'Hi Tom!, nice article')
 # Comment.create(post_id: 2, author_id: 2, text: 'tom you are the best!')
 # Comment.create(post_id: 3, author_id: 3, text: 'Thanks daniel, nice article!')
+# curl -XPOST -H "Content-Type: application/json" -d '{ "user": { "name": "Alex", "email": "Alex@gmail.com", "password": "1234567", "confirm_password": "1234567" } }' http://localhost:3000/users
