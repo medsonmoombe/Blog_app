@@ -303,9 +303,14 @@ Devise.setup do |config|
   #   include Turbolinks::Controller
   # end
 
+  config.jwt do |jwt|
+    jwt.secret = Rails.application.credentials.devise[:jwt_secret_key]
+  end
   # ==> Configuration for :registerable
 
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
 end
+# 7067ae23eb0f507746b8546a0914cc08b4d8552c0c4e723109749ee7193a1806d106bd9ed7cbc19772e3ce6c364f339686
+# 568940df4446e34025b207a6ac8012
